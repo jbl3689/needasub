@@ -118,11 +118,11 @@ export function PlayersList() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {players.map((player) => (
           <Card key={player.id} className="overflow-hidden">
             <CardHeader className="flex flex-row items-center gap-4">
-              <Avatar className="h-12 w-12">
+              <Avatar className="w-12 h-12">
                 <AvatarImage src={player.image} alt={player.name} />
                 <AvatarFallback>{player.name.substring(0, 2)}</AvatarFallback>
               </Avatar>
