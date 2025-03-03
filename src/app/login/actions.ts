@@ -1,13 +1,10 @@
 "use server";
 
+import { supabase } from "@/src/lib/supabase/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { createClient } from "@utils/supabase/client";
-
 export async function login(formData: FormData) {
-  const supabase = await createClient();
-
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
@@ -26,8 +23,6 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const supabase = await createClient();
-
   // type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
