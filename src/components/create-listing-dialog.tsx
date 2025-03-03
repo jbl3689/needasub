@@ -10,27 +10,27 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@src/components/ui/dialog";
-import { Button } from "@src/components/ui/button";
-import { Input } from "@src/components/ui/input";
-import { Label } from "@src/components/ui/label";
+} from "@/src/components/ui/dialog";
+import { Button } from "@/src/components/ui/button";
+import { Input } from "@/src/components/ui/input";
+import { Label } from "@/src/components/ui/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@src/components/ui/tabs";
-import { Textarea } from "@src/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@src/components/ui/radio-group";
-import { Calendar } from "@src/components/ui/calendar";
+} from "@/src/components/ui/tabs";
+import { Textarea } from "@/src/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/src/components/ui/radio-group";
+import { Calendar } from "@/src/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@src/components/ui/popover";
+} from "@/src/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
-import { cn } from "@src/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 interface CreateListingDialogProps {
   open: boolean;
@@ -93,7 +93,6 @@ export function CreateListingDialog({
                     <Label htmlFor="level">Skill Level</Label>
                     <select
                       title="level"
-                      id="level"
                       className="flex w-full h-10 px-3 py-2 text-sm border rounded-md border-input bg-background ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       <option value="">Select level</option>
@@ -212,6 +211,7 @@ export function CreateListingDialog({
                   <Label htmlFor="level">Team Level</Label>
                   <select
                     id="level"
+                    title="level"
                     className="flex w-full h-10 px-3 py-2 text-sm border rounded-md border-input bg-background ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <option value="">Select level</option>

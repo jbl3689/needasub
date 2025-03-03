@@ -2,11 +2,11 @@ import type React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@components/theme-provider";
-import { MainNav } from "@src/components/main-nav";
-import { SearchInput } from "@src/components/search-input";
-import { ModeToggle } from "@src/components/mode-toggle";
-import { UserNav } from "@src/components/user-nav";
-import { FlexBox } from "@src/components/ui/FlexBox";
+import { MainNav } from "@/src/components/main-nav";
+import { SearchInput } from "@/src/components/search-input";
+import { ModeToggle } from "@/src/components/mode-toggle";
+import { UserNav } from "@/src/components/user-nav";
+import { FlexBox } from "@/src/components/ui/FlexBox";
 
 const inter = Inter({ subsets: ["latin"] });
 
