@@ -1,15 +1,27 @@
+import { LoginForm } from "@/src/components/auth/LoginForm";
+import { createClient } from "@/src/lib/supabase/server";
 import { signup } from "@actions/auth/signup";
-import { login } from "@actions/auth/login";
+import { redirect } from "next/navigation";
 
-export default function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: { returnUrl?: string };
+}) {
+  // Check if user is already logged in
+  const supabase = await createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (session) {
+    // User is already logged in, redirect
+    redirect(searchParams.returnUrl || "/dashboard");
+  }
+
   return (
-    <form>
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
-    </form>
+    <div className="container flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center py-12">
+      <LoginForm />
+    </div>
   );
 }
