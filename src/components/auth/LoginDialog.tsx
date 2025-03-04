@@ -3,7 +3,7 @@
 import type React from "react";
 
 import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/src/components/shadcnui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,15 +11,15 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/src/components/ui/dialog";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
+} from "@/src/components/shadcnui/dialog";
+import { Input } from "@/src/components/shadcnui/input";
+import { Label } from "@/src/components/shadcnui/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/src/components/ui/tabs";
+} from "@/src/components/shadcnui/tabs";
 
 interface LoginDialogProps {
   open: boolean;

@@ -4,8 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/src/components/ui/avatar";
-import { Button } from "@/src/components/ui/button";
+} from "@/src/components/shadcnui/avatar";
+import { Button } from "@/src/components/shadcnui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,9 +14,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
+} from "@/src/components/shadcnui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "./auth/login-dialog";
+import { LoginDialog } from "./auth/LoginDialog";
 
 export function UserNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/src/components/shadcnui/button";
 import { PlusCircle } from "lucide-react";
-import { CreateListingDialog } from "./create-listing-dialog";
+import { CreateListingDialog } from "./CreateListingDialog";
 
 export function CreateListingButton() {
   const [dialogOpen, setDialogOpen] = useState(false);

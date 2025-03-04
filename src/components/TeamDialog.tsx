@@ -6,9 +6,9 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/src/components/ui/dialog";
-import { Button } from "@/src/components/ui/button";
-import { Badge } from "@/src/components/ui/badge";
+} from "@/src/components/shadcnui/dialog";
+import { Button } from "@/src/components/shadcnui/button";
+import { Badge } from "@/src/components/shadcnui/badge";
 import { Calendar, MapPin, Star, Users } from "lucide-react";
 
 interface TeamDialogProps {

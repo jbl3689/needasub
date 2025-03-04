@@ -8,15 +8,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
+} from "@/src/components/shadcnui/card";
+import { Badge } from "@/src/components/shadcnui/badge";
+import { Button } from "@/src/components/shadcnui/button";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/src/components/ui/avatar";
-import { PlayerDialog } from "./player-dialog";
+} from "@/src/components/shadcnui/avatar";
+import { PlayerDialog } from "./PlayerDialog";
 
 // Mock data - would come from Supabase in a real app
 const MOCK_PLAYERS = [

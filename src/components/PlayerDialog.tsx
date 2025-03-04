@@ -6,14 +6,14 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/src/components/ui/dialog";
-import { Button } from "@/src/components/ui/button";
-import { Badge } from "@/src/components/ui/badge";
+} from "@/src/components/shadcnui/dialog";
+import { Button } from "@/src/components/shadcnui/button";
+import { Badge } from "@/src/components/shadcnui/badge";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/src/components/ui/avatar";
+} from "@/src/components/shadcnui/avatar";
 import { Calendar, MapPin, Star } from "lucide-react";
 
 interface PlayerDialogProps {

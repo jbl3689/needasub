@@ -10,24 +10,27 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/src/components/ui/dialog";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
+} from "@/src/components/shadcnui/dialog";
+import { Button } from "@/src/components/shadcnui/button";
+import { Input } from "@/src/components/shadcnui/input";
+import { Label } from "@/src/components/shadcnui/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/src/components/ui/tabs";
-import { Textarea } from "@/src/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/src/components/ui/radio-group";
-import { Calendar } from "@/src/components/ui/calendar";
+} from "@/src/components/shadcnui/tabs";
+import { Textarea } from "@/src/components/shadcnui/textarea";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@/src/components/shadcnui/radio-group";
+import { Calendar } from "@/src/components/shadcnui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/src/components/ui/popover";
+} from "@/src/components/shadcnui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/src/lib/utils";

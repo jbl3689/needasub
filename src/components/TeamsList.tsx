@@ -8,11 +8,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
+} from "@/src/components/shadcnui/card";
+import { Badge } from "@/src/components/shadcnui/badge";
+import { Button } from "@/src/components/shadcnui/button";
 import { Users } from "lucide-react";
-import { TeamDialog } from "./team-dialog";
+import { TeamDialog } from "./TeamDialog";
 
 // Mock data - would come from Supabase in a real app
 const MOCK_TEAMS = [
