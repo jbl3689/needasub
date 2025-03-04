@@ -18,19 +18,9 @@ import { FlexBox } from "@/src/components/ui/FlexBox";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="border-b">
-        <FlexBox className="flex items-center h-16 px-4">
-          <MainNav />
-          <div className="flex items-center ml-auto space-x-4">
-            <SearchInput />
-            <ModeToggle />
-            <UserNav />
-          </div>
-        </FlexBox>
-      </div>
       <div className="container py-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold tracking-tight">NeedASub</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Marketplace</h1>
           <CreateListingButton />
         </div>
         <Tabs defaultValue="players" className="mt-6">

@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "./login-dialog";
+import { LoginDialog } from "./auth/login-dialog";
 
 export function UserNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

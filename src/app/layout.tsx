@@ -1,5 +1,5 @@
 import type React from "react";
-import "./globals.css";
+import "@lib/globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@components/theme-provider";
 import { MainNav } from "@/src/components/main-nav";
