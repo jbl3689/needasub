@@ -1,6 +1,6 @@
 import { LoginForm } from "@/src/components/auth/LoginForm";
 import { createClient } from "@/src/lib/supabase/server";
-import { signup } from "@actions/auth/signup";
+
 import { redirect } from "next/navigation";
 
 export default async function LoginPage({
@@ -16,7 +16,7 @@ export default async function LoginPage({
 
   if (session) {
     // User is already logged in, redirect
-    redirect(searchParams.returnUrl || "/dashboard");
+    redirect(searchParams.returnUrl || "/");
   }
 
   return (

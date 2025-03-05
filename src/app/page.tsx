@@ -10,7 +10,7 @@ import { UserNav } from "@/src/components/UserNav";
 import { MainNav } from "@/src/components/MainNav";
 import { SearchInput } from "@/src/components/SearchInput";
 import { PlayersList } from "@/src/components/PlayersList";
-import { TeamsList } from "@/src/components/TeamsList";
+import { TeamsList } from "@/src/components/TeamsList/TeamsList";
 import { PlayerSkeleton, TeamSkeleton } from "@/src/components/Skeletons";
 import { CreateListingButton } from "@/src/components/CreateListingButton";
 import { FlexBox } from "@/src/components/shadcnui/FlexBox";
