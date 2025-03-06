@@ -3,13 +3,13 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { Button } from "@/src/components/shadcnui/button";
+import { Button } from "@components/shadcnui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/src/components/shadcnui/dropdown-menu";
+} from "@components/shadcnui/dropdown-menu";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

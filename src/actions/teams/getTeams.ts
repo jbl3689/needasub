@@ -1,8 +1,7 @@
-// src/app/teams/actions.ts
 "use server";
 
-import { createClient } from "@/src/lib/supabase/server";
-import { Team } from "@/src/lib/constants/types/types";
+import { createClient } from "@lib/supabase/server";
+import { Team } from "@lib/constants/types/types";
 
 /**
  * Fetches all teams from the database

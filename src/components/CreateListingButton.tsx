@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/src/components/shadcnui/button";
+import { Button } from "@components/shadcnui/button";
 import { PlusCircle } from "lucide-react";
 import { CreateListingDialog } from "./CreateListingDialog";
 

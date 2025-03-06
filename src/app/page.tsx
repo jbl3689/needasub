@@ -4,16 +4,16 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/src/components/shadcnui/tabs";
-import { ModeToggle } from "@/src/components/ModeToggle";
-import { UserNav } from "@/src/components/UserNav";
-import { MainNav } from "@/src/components/MainNav";
-import { SearchInput } from "@/src/components/SearchInput";
-import { PlayersList } from "@/src/components/PlayersList";
-import { TeamsList } from "@/src/components/TeamsList/TeamsList";
-import { PlayerSkeleton, TeamSkeleton } from "@/src/components/Skeletons";
-import { CreateListingButton } from "@/src/components/CreateListingButton";
-import { FlexBox } from "@/src/components/shadcnui/FlexBox";
+} from "@components/shadcnui/tabs";
+import { ModeToggle } from "@components/ModeToggle";
+import { UserNav } from "@components/UserNav";
+import { MainNav } from "@components/MainNav";
+import { SearchInput } from "@components/SearchInput";
+import { TeamsList } from "@components/TeamsList/TeamsList";
+import { PlayerSkeleton, TeamSkeleton } from "@components/Skeletons";
+import { CreateListingButton } from "@components/CreateListingButton";
+import { FlexBox } from "@components/shadcnui/FlexBox";
+import { PlayersList } from "../components/PlayersList";
 
 export default function Home() {
   return (

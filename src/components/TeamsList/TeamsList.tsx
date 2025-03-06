@@ -8,18 +8,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/shadcnui/card";
-import { Badge } from "@/src/components/shadcnui/badge";
-import { Button } from "@/src/components/shadcnui/button";
+} from "@components/shadcnui/card";
+import { Badge } from "@components/shadcnui/badge";
+import { Button } from "@components/shadcnui/button";
 import { Users } from "lucide-react";
 import { TeamDialog } from "../TeamDialog";
 import { useTeamsList } from "./useTeamsList";
-import { Team } from "@/src/lib/constants/types/types";
+import { Team } from "@lib/constants/types/types";
 import {
   getReadableAgeGroup,
   getReadableGenderCategory,
   getReadableSkillLevel,
-} from "@/src/lib/constants/mapping/teamMapping";
+} from "@lib/constants/mapping/teamMapping";
 
 export function TeamsList() {
   const [teams, setTeams] = useState<Team[]>([]);
@@ -37,17 +37,6 @@ export function TeamsList() {
   const handleTeamClick = (team: Team) => {
     setSelectedTeam(team);
     setDialogOpen(true);
-  };
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat("en-GB", {
-      weekday: "short",
-      day: "numeric",
-      month: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-    }).format(date);
   };
 
   return (

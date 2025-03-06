@@ -10,30 +10,27 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/src/components/shadcnui/dialog";
-import { Button } from "@/src/components/shadcnui/button";
-import { Input } from "@/src/components/shadcnui/input";
-import { Label } from "@/src/components/shadcnui/label";
+} from "@components/shadcnui/dialog";
+import { Button } from "@components/shadcnui/button";
+import { Input } from "@components/shadcnui/input";
+import { Label } from "@components/shadcnui/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/src/components/shadcnui/tabs";
-import { Textarea } from "@/src/components/shadcnui/textarea";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/src/components/shadcnui/radio-group";
-import { Calendar } from "@/src/components/shadcnui/calendar";
+} from "@components/shadcnui/tabs";
+import { Textarea } from "@components/shadcnui/textarea";
+import { RadioGroup, RadioGroupItem } from "@components/shadcnui/radio-group";
+import { Calendar } from "@components/shadcnui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/src/components/shadcnui/popover";
+} from "@components/shadcnui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
-import { cn } from "@/src/lib/utils";
+import { cn } from "@lib/utils";
 
 interface CreateListingDialogProps {
   open: boolean;

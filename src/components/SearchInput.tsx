@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { Input } from "@/src/components/shadcnui/input";
+import { Input } from "@components/shadcnui/input";
 
 export function SearchInput() {
   return (

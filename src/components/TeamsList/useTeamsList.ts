@@ -1,5 +1,5 @@
-import { getAllTeams } from "@/src/actions/teams/getTeams";
-import { Team } from "@/src/lib/constants/types/types";
+import { getAllTeams } from "@actions/teams/getTeams";
+import { Team } from "@lib/constants/types/types";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 
 interface UseTeamsListProps {
@@ -7,12 +7,10 @@ interface UseTeamsListProps {
 }
 
 export function useTeamsList({ setTeams }: UseTeamsListProps) {
-  // State for the teams data
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [totalCount, setTotalCount] = useState(0);
 
-  // Function to fetch teams
   const fetchTeams = useCallback(async () => {
     setIsLoading(true);
     setError(null);

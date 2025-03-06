@@ -1,5 +1,5 @@
-import { LoginForm } from "@/src/components/auth/LoginForm";
-import { createClient } from "@/src/lib/supabase/server";
+import { LoginForm } from "@components/auth/LoginForm";
+import { createClient } from "@lib/supabase/server";
 
 import { redirect } from "next/navigation";
 

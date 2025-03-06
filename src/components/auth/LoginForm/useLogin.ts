@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { signIn } from "@/src/actions/auth/signIn";
+import { signIn } from "@actions/auth/signIn";
 
 export function useLogin() {
   const router = useRouter();

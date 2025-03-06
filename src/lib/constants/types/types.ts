@@ -8,3 +8,7 @@ export type TeamMembers = Tables<"team_members">;
 export type TeamRatings = Tables<"team_ratings">;
 export type TeamListings = Tables<"team_listings">;
 export type ListingApplications = Tables<"listing_applications">;
+
+// CUSTOM TYPES FOR JOINED RESULTS \\
+
+export type PlayerWithProfile = PlayerProfiles & Profiles;

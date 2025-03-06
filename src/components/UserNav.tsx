@@ -4,8 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/src/components/shadcnui/avatar";
-import { Button } from "@/src/components/shadcnui/button";
+} from "@components/shadcnui/avatar";
+import { Button } from "@components/shadcnui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/src/components/shadcnui/dropdown-menu";
+} from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
 import { LoginDialog } from "./auth/LoginDialog";
 
