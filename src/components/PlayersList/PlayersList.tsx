@@ -30,12 +30,11 @@ export function PlayersList() {
   const { error, isLoading, totalCount } = usePlayersList({
     setPlayers,
   });
-  const [selectedPlayer, setSelectedPlayer] = useState<PlayerProfiles | null>(
-    null
-  );
+  const [selectedPlayer, setSelectedPlayer] =
+    useState<PlayerWithProfile | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handlePlayerClick = (player: PlayerProfiles) => {
+  const handlePlayerClick = (player: PlayerWithProfile) => {
     setSelectedPlayer(player);
     setDialogOpen(true);
   };
