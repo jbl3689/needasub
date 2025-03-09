@@ -11,6 +11,15 @@ import {
   DropdownMenuTrigger,
 } from "@components/shadcnui/dropdown-menu";
 
+/**
+ * Renders a dropdown menu for toggling the application's theme.
+ *
+ * This component displays a button with animated Sun and Moon icons that indicate the current theme.
+ * When the button is clicked, it opens a dropdown menu with three options—"Light", "Dark", and "System"—
+ * allowing users to change the theme using the next-themes library.
+ *
+ * The button includes a "gooeyRight" visual effect for enhanced visual feedback.
+ */
 export function ModeToggle() {
   const { setTheme } = useTheme();
 
