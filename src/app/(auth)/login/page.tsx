@@ -1,4 +1,4 @@
-import { LoginForm } from "@components/auth/LoginForm";
+import { LoginForm } from "@components/(auth)/LoginForm";
 import { createClient } from "@lib/supabase/server";
 
 import { redirect } from "next/navigation";

@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "./auth/LoginDialog";
+import { LoginDialog } from "./(auth)/LoginDialog";
 
 export function UserNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
