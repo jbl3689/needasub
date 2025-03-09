@@ -83,7 +83,11 @@ export function PlayersList() {
                   {player.years_experience} years experience
                 </span>
               </div>
-              <Button size="sm" onClick={() => handlePlayerClick(player)}>
+              <Button
+                size="sm"
+                onClick={() => handlePlayerClick(player)}
+                effect="ringHover"
+              >
                 View Profile
               </Button>
             </CardFooter>

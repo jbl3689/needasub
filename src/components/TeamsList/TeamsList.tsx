@@ -73,7 +73,11 @@ export function TeamsList() {
                   {team.active ? "Active" : "Inactive"}
                 </span>
               </div>
-              <Button size="sm" onClick={() => handleTeamClick(team)}>
+              <Button
+                size="sm"
+                onClick={() => handleTeamClick(team)}
+                effect="ringHover"
+              >
                 View Team
               </Button>
             </CardFooter>

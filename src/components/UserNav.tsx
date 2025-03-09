@@ -25,7 +25,11 @@ export function UserNav() {
   if (!isLoggedIn) {
     return (
       <>
-        <Button variant="outline" onClick={() => setShowLoginDialog(true)}>
+        <Button
+          variant="outline"
+          onClick={() => setShowLoginDialog(true)}
+          effect="gooeyRight"
+        >
           Sign In
         </Button>
         <LoginDialog

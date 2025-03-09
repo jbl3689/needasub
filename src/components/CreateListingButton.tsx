@@ -10,7 +10,7 @@ export function CreateListingButton() {
 
   return (
     <>
-      <Button onClick={() => setDialogOpen(true)}>
+      <Button onClick={() => setDialogOpen(true)} effect="gooeyRight">
         <PlusCircle className="w-4 h-4 mr-2" />
         Create Listing
       </Button>
