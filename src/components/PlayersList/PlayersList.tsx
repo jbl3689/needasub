@@ -81,7 +81,7 @@ export function PlayersList() {
             <CardFooter className="flex justify-between">
               <div className="flex items-center">
                 <span className="text-sm font-medium">
-                  Years of Experience: {player.years_experience}
+                  {player.years_experience} years experience
                 </span>
               </div>
               <Button size="sm" onClick={() => handlePlayerClick(player)}>

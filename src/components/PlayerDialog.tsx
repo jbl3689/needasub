@@ -15,20 +15,11 @@ import {
   AvatarImage,
 } from "@components/shadcnui/avatar";
 import { Calendar, MapPin, Star } from "lucide-react";
+import { PlayerWithProfile } from "@lib/constants/types/types";
+import { getReadableSkillLevel } from "@lib/constants/mapping/playerMapping";
 
 interface PlayerDialogProps {
-  player: {
-    id: number;
-    name: string;
-    age: number;
-    position: string;
-    level: string;
-    location: string;
-    availability: string;
-    bio: string;
-    image: string;
-    rating: number;
-  };
+  player: PlayerWithProfile;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
@@ -40,7 +31,7 @@ export function PlayerDialog({
 }: PlayerDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="w-1/2">
         <DialogHeader>
           <DialogTitle>Player Profile</DialogTitle>
           <DialogDescription>
@@ -49,18 +40,25 @@ export function PlayerDialog({
         </DialogHeader>
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
-            <Avatar className="h-16 w-16">
-              <AvatarImage src={player.image} alt={player.name} />
-              <AvatarFallback>{player.name.substring(0, 2)}</AvatarFallback>
+            <Avatar className="w-12 h-12">
+              <AvatarImage
+                src={player.avatar_url ?? ""}
+                alt={player.full_name ?? ""}
+              />
+              <AvatarFallback>
+                {player.full_name?.substring(0, 2)}
+              </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="text-lg font-semibold">{player.name}</h3>
+              <h3 className="text-lg font-semibold">{player.full_name}</h3>
               <p className="text-sm text-muted-foreground">
-                {player.age} years old
+                {player.age} years old • {player.location}
               </p>
               <div className="flex items-center mt-1">
-                <Star className="h-4 w-4 fill-primary text-primary mr-1" />
-                <span className="text-sm font-medium">{player.rating}/5</span>
+                <Star className="w-4 h-4 mr-1 fill-primary text-primary" />
+                <span className="text-sm font-medium">
+                  {player.years_experience} years experience
+                </span>
               </div>
             </div>
           </div>
@@ -72,20 +70,22 @@ export function PlayerDialog({
             </div>
             <div className="flex flex-col gap-1">
               <span className="text-sm font-medium">Level</span>
-              <Badge variant="outline">{player.level}</Badge>
+              <Badge variant="outline">
+                {getReadableSkillLevel(player.skill_level)}
+              </Badge>
             </div>
             <div className="flex items-center gap-1 mt-2">
-              <MapPin className="h-4 w-4 text-muted-foreground" />
+              <MapPin className="w-4 h-4 text-muted-foreground" />
               <span className="text-sm">{player.location}</span>
             </div>
             <div className="flex items-center gap-1 mt-2">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <Calendar className="w-4 h-4 text-muted-foreground" />
               <span className="text-sm">{player.availability}</span>
             </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-medium mb-1">About</h4>
+            <h4 className="mb-1 text-sm font-medium">About</h4>
             <p className="text-sm text-muted-foreground">{player.bio}</p>
           </div>
 
