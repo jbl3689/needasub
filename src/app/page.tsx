@@ -5,15 +5,10 @@ import {
   TabsList,
   TabsTrigger,
 } from "@components/shadcnui/tabs";
-import { ModeToggle } from "@components/ModeToggle";
-import { UserNav } from "@components/UserNav";
-import { MainNav } from "@components/MainNav";
-import { SearchInput } from "@components/SearchInput";
 import { TeamsList } from "@components/TeamsList/TeamsList";
-import { PlayerSkeleton, TeamSkeleton } from "@components/Skeletons";
 import { CreateListingButton } from "@components/CreateListingButton";
-import { FlexBox } from "@components/shadcnui/FlexBox";
 import { PlayersList } from "../components/PlayersList";
+import { PlayerSkeleton, TeamSkeleton } from "@components/skeletons";
 
 export default function Home() {
   return (
