@@ -1,12 +1,6 @@
 "use server";
 
-import { createClient } from "@supabase/supabase-js";
-import { PlayerProfiles, Profiles } from "@lib/constants/types/types";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+import { createClient } from "@lib/supabase/server";
 
 interface CreatePlayerProfileData {
   id: string;
@@ -21,6 +15,8 @@ interface CreatePlayerProfileData {
 }
 
 export async function createPlayerProfile(data: CreatePlayerProfileData) {
+  const supabase = await createClient();
+
   // First create the profile
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
