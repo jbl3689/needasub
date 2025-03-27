@@ -1,6 +1,12 @@
 import { getAllTeams } from "@actions/teams/getTeams";
 import { Team } from "@lib/constants/types/types";
-import { Dispatch, SetStateAction, useCallback, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 
 interface UseTeamsListProps {
   setTeams: Dispatch<SetStateAction<Team[]>>;
@@ -17,7 +23,6 @@ export function useTeamsList({ setTeams }: UseTeamsListProps) {
 
     try {
       const allTeams = await getAllTeams();
-
       setTeams(allTeams);
       setTotalCount(allTeams.length);
     } catch (e) {
@@ -26,10 +31,17 @@ export function useTeamsList({ setTeams }: UseTeamsListProps) {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [setTeams]);
+
+  useEffect(() => {
+    let mounted = true;
+    fetchTeams();
+    return () => {
+      mounted = false;
+    };
+  }, [fetchTeams]);
 
   return {
-    fetchTeams,
     isLoading,
     error,
     totalCount,
