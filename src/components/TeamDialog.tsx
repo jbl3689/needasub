@@ -9,45 +9,27 @@ import {
 } from "@components/shadcnui/dialog";
 import { Button } from "@components/shadcnui/button";
 import { Badge } from "@components/shadcnui/badge";
-import { Calendar, MapPin, Star, Users } from "lucide-react";
+import { MapPin, Users } from "lucide-react";
+import { Team } from "@lib/constants/types/types";
+import {
+  getReadableAgeGroup,
+  getReadableGenderCategory,
+  getReadableSkillLevel,
+} from "@lib/constants/mapping/teamMapping";
 
 interface TeamDialogProps {
-  team: {
-    id: number;
-    name: string;
-    location: string;
-    level: string;
-    matchType: string;
-    positionsNeeded: string[];
-    matchDate: string;
-    description: string;
-    image: string;
-    rating: number;
-  };
+  team: Team;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
 export function TeamDialog({ team, open, onOpenChange }: TeamDialogProps) {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat("en-GB", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      hour: "2-digit",
-      minute: "2-digit",
-    }).format(date);
-  };
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Team Details</DialogTitle>
-          <DialogDescription>
-            Apply to join this team for their upcoming match
-          </DialogDescription>
+          <DialogDescription>View details about this team</DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
@@ -56,41 +38,41 @@ export function TeamDialog({ team, open, onOpenChange }: TeamDialogProps) {
             </div>
             <div>
               <h3 className="text-lg font-semibold">{team.name}</h3>
-              <p className="text-sm text-muted-foreground">{team.matchType}</p>
+              <p className="text-sm text-muted-foreground">
+                {getReadableSkillLevel(team.team_type)}
+              </p>
               <div className="flex items-center mt-1">
-                <Star className="h-4 w-4 fill-primary text-primary mr-1" />
-                <span className="text-sm font-medium">{team.rating}/5</span>
+                <span className="text-sm font-medium">
+                  {team.active ? "Active" : "Inactive"}
+                </span>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-2">
             <div className="flex flex-col gap-1">
-              <span className="text-sm font-medium">Level</span>
-              <Badge>{team.level}</Badge>
+              <span className="text-sm font-medium">League</span>
+              <Badge>{team.league}</Badge>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="text-sm font-medium">Match Type</span>
-              <Badge variant="outline">{team.matchType}</Badge>
+              <span className="text-sm font-medium">Division</span>
+              <Badge variant="outline">{team.division}</Badge>
             </div>
             <div className="flex items-center gap-1 mt-2">
               <MapPin className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">{team.location}</span>
+              <span className="text-sm">{team.home_location}</span>
             </div>
-            <div className="flex items-center gap-1 mt-2">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm">{formatDate(team.matchDate)}</span>
+            <div className="flex flex-col gap-1">
+              <span className="text-sm font-medium">Age Group</span>
+              <Badge variant="secondary">
+                {getReadableAgeGroup(team.age_group)}
+              </Badge>
             </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-medium mb-1">Positions Needed</h4>
-            <div className="flex flex-wrap gap-2">
-              {team.positionsNeeded.map((position) => (
-                <Badge key={position} variant="secondary">
-                  {position}
-                </Badge>
-              ))}
+            <div className="flex flex-col gap-1">
+              <span className="text-sm font-medium">Gender Category</span>
+              <Badge variant="secondary">
+                {getReadableGenderCategory(team.gender_category)}
+              </Badge>
             </div>
           </div>
 
@@ -103,7 +85,7 @@ export function TeamDialog({ team, open, onOpenChange }: TeamDialogProps) {
             <Button variant="outline" onClick={() => onOpenChange(false)}>
               Close
             </Button>
-            <Button>Apply to Join</Button>
+            <Button>Contact Team</Button>
           </div>
         </div>
       </DialogContent>
