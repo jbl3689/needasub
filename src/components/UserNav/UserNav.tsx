@@ -18,6 +18,9 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import { LoginDialog } from "@components/(auth)/LoginDialog";
+import { useAuth } from "@hooks/useAuth";
+import { useRouter } from "next/navigation";
+import { createClient } from "@lib/supabase/client";
 
 /**
  * Renders a user navigation component that adapts its UI based on the authentication state.
@@ -28,10 +31,17 @@ import { LoginDialog } from "@components/(auth)/LoginDialog";
  * @returns The JSX element representing the navigation UI.
  */
 export function UserNav() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAuthenticated, user } = useAuth();
+  const router = useRouter();
   const [showLoginDialog, setShowLoginDialog] = useState(false);
 
-  if (!isLoggedIn) {
+  const handleLogOut = async () => {
+    const supabase = createClient;
+    await supabase.auth.signOut();
+    router.refresh(); // Refresh to update auth state in the UI
+  };
+
+  if (!isAuthenticated) {
     return (
       <>
         <Button variant="ghost" effect="gooeyRight">
@@ -40,7 +50,7 @@ export function UserNav() {
         <LoginDialog
           open={showLoginDialog}
           onOpenChange={setShowLoginDialog}
-          onSuccess={() => setIsLoggedIn(true)}
+          onSuccess={() => router.refresh()}
         />
       </>
     );
@@ -52,7 +62,7 @@ export function UserNav() {
         <Button variant="ghost" className="relative w-8 h-8 rounded-full">
           <Avatar className="w-8 h-8">
             <AvatarImage src="/placeholder.svg" alt="@user" />
-            <AvatarFallback>JD</AvatarFallback>
+            {/* <AvatarFallback>JD</AvatarFallback> */}
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -73,9 +83,7 @@ export function UserNav() {
           <DropdownMenuItem>Settings</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => setIsLoggedIn(false)}>
-          Log out
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleLogOut}>Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
