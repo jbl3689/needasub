@@ -16,17 +16,25 @@ import {
   DropdownMenuTrigger,
 } from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "./(auth)/LoginDialog";
+import { LoginDialog } from "../(auth)/LoginDialog";
+import Link from "next/link";
+import { createClient } from "@lib/supabase/server";
 
 export function UserNav() {
+  // Check if user is already logged in
+  const supabase = await createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   if (!isLoggedIn) {
     return (
       <>
-        <Button variant="outline" onClick={() => setShowLoginDialog(true)}>
-          Sign In
+        <Button variant="ghost">
+          <Link href="/login">Login/Signup</Link>
         </Button>
         <LoginDialog
           open={showLoginDialog}

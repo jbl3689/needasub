@@ -2,10 +2,10 @@ import type React from "react";
 import "@lib/globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@components/ThemeProvider";
-import { MainNav } from "@components/MainNav";
+import { MainNav } from "@components/MainNav/MainNav";
 import { SearchInput } from "@components/SearchInput";
 import { ModeToggle } from "@components/ModeToggle";
-import { UserNav } from "@components/UserNav";
+import { UserNav } from "@components/UserNav/UserNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
