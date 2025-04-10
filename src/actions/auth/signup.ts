@@ -2,7 +2,6 @@
 
 import { createClient } from "@lib/supabase/server";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
 export async function signup(formData: FormData) {
   const supabase = await createClient();
@@ -17,9 +16,19 @@ export async function signup(formData: FormData) {
   const { error } = await supabase.auth.signUp(data);
 
   if (error) {
-    redirect("/error");
+    return {
+      error: error.message,
+    };
   }
 
-  revalidatePath("/", "layout");
-  redirect("/account");
+  const returnUrl = (formData.get("returnUrl") as string) || "/";
+
+  revalidatePath(returnUrl);
+
+  return {
+    success: true,
+    message:
+      "Registration successful! Please check your email for verification.",
+    returnUrl,
+  };
 }

@@ -17,7 +17,6 @@ import {
 } from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
 import Link from "next/link";
-import { LoginDialog } from "@components/(auth)/LoginDialog";
 import { useAuth } from "@hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { createClient } from "@lib/supabase/client";
@@ -47,11 +46,6 @@ export function UserNav() {
         <Button variant="ghost" effect="gooeyRight">
           <Link href="/login">Login/Signup</Link>
         </Button>
-        <LoginDialog
-          open={showLoginDialog}
-          onOpenChange={setShowLoginDialog}
-          onSuccess={() => router.refresh()}
-        />
       </>
     );
   }
