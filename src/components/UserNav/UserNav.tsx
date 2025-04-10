@@ -16,24 +16,25 @@ import {
   DropdownMenuTrigger,
 } from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "../(auth)/LoginDialog";
 import Link from "next/link";
-import { createClient } from "@lib/supabase/server";
+import { LoginDialog } from "@components/(auth)/LoginDialog";
 
+/**
+ * Renders a user navigation component that adapts its UI based on the authentication state.
+ *
+ * When the user is not logged in, it displays a "Sign In" button (with visual effect) that opens a login dialog.
+ * Upon successful login, the component renders a dropdown menu with user account options including profile, listings, messages, settings, and a logout action.
+ *
+ * @returns The JSX element representing the navigation UI.
+ */
 export function UserNav() {
-  // Check if user is already logged in
-  const supabase = await createClient();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   if (!isLoggedIn) {
     return (
       <>
-        <Button variant="ghost">
+        <Button variant="ghost" effect="gooeyRight">
           <Link href="/login">Login/Signup</Link>
         </Button>
         <LoginDialog
