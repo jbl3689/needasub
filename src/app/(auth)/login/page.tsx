@@ -1,3 +1,4 @@
+import { getSession } from "@actions/auth/getSession";
 import { LoginForm } from "@components/(auth)/LoginForm";
 import { createClient } from "@lib/supabase/server";
 
@@ -8,16 +9,9 @@ export default async function LoginPage({
 }: {
   searchParams: { returnUrl?: string };
 }) {
-  // Check if user is already logged in
-  const supabase = await createClient();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (session) {
-    // User is already logged in, redirect
-    redirect(searchParams.returnUrl || "/");
-  }
+  await getSession({
+    redirectIfAuthenticated: searchParams.returnUrl || "/",
+  });
 
   return (
     <div className="container flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center py-12">

@@ -5,6 +5,10 @@ import {
   TabsList,
   TabsTrigger,
 } from "@components/shadcnui/tabs";
+import { ModeToggle } from "@components/ModeToggle";
+import { UserNav } from "@components/UserNav/UserNav";
+import { MainNav } from "@components/MainNav/MainNav";
+import { SearchInput } from "@components/SearchInput";
 import { TeamsList } from "@components/TeamsList/TeamsList";
 import { CreateListingButton } from "@components/CreateListingButton";
 import { PlayersList } from "../components/PlayersList";

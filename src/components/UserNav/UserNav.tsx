@@ -16,7 +16,8 @@ import {
   DropdownMenuTrigger,
 } from "@components/shadcnui/dropdown-menu";
 import { useState } from "react";
-import { LoginDialog } from "./(auth)/LoginDialog";
+import Link from "next/link";
+import { LoginDialog } from "@components/(auth)/LoginDialog";
 
 /**
  * Renders a user navigation component that adapts its UI based on the authentication state.
@@ -33,12 +34,8 @@ export function UserNav() {
   if (!isLoggedIn) {
     return (
       <>
-        <Button
-          variant="outline"
-          onClick={() => setShowLoginDialog(true)}
-          effect="gooeyRight"
-        >
-          Sign In
+        <Button variant="ghost" effect="gooeyRight">
+          <Link href="/login">Login/Signup</Link>
         </Button>
         <LoginDialog
           open={showLoginDialog}
