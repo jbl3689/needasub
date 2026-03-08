@@ -17,6 +17,12 @@ This project is a **prototype/web app** built with **Next.js (App Router)** that
 
 ---
 
+## Screenshots
+<img width="1440" height="785" alt="Screenshot 2026-03-08 at 3 15 51 PM" src="https://github.com/user-attachments/assets/39de1034-c1d9-4014-bcb4-6dd6fca3884f" />
+<img width="1440" height="781" alt="Screenshot 2026-03-08 at 3 16 04 PM" src="https://github.com/user-attachments/assets/48184d47-da36-4f98-9708-d4a601f531ae" />
+
+---
+
 ## 🧰 Tech Stack
 
 - **Next.js 14 (App Router)**
